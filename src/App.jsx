@@ -1,28 +1,32 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-import Button from './components/Button.jsx'
+import { useState } from 'react';
 
-export default function Square() {
-  const [count, setCount] = useState(0)
+function Square(){
+const [value, setValue] = useState(null)
+
+  function handleClick(){
+    setValue('X')
+  }
+  return <button className="square" onClick={handleClick}>{value}</button>
+}
+export default function Board() {
 
   return (
     <>
-      <div>
-        <button className="square">1</button>
-        <button className="square">2</button>
-        <button className="square">3</button>
+      <div className='board-row'>
+        <Square />
+        <Square />
+        <Square />
       </div>
-      <div>
-        <button className="square">4</button>
-        <button className="square">5</button>
-        <button className="square">6</button>
-      </div>
-      <div>
-        <button className="square">7</button>
-        <button className="square">8</button>
-        <button className="square">9</button>
+      <div className='board-row'>
+        <Square />
+        <Square />
+        <Square />
+        </div>
+      <div className='board-row'>
+        <Square />
+        <Square />
+        <Square />
       </div>
       
     </>
